@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>روضة ورد الندى النموذجية</title>
+
+  <!-- خط عربي جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --accent1: #FF6B6B; /* حمرة زاهية */
+      --accent2: #FFD93D; /* أصفر زاهي */
+      --accent3: #6BCB77; /* أخضر مبهج */
+      --accent4: #4D96FF; /* أزرق حيوي */
+      --muted: #6b7280;
+      --card: #ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 14px;
+      --shadow: 0 8px 30px rgba(16,24,40,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Almarai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #F4FCFF 0%, #FFF8F3 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:24px;
+    }
+
+    /* Container */
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    /* Header / Navbar */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:800;
+      box-shadow:var(--shadow);
+      font-size:20px;
+    }
+    .brand h1{
+      margin:0;
+      font-size:20px;
+      line-height:1.05;
+    }
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    nav a{
+      margin-left:18px;
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background: linear-gradient(90deg,var(--accent3),var(--accent4));
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      box-shadow: 0 6px 22px rgba(77,150,255,0.18);
+      font-weight:700;
+    }
+
+    /* Hero */
+    .hero{
+      background: linear-gradient(135deg, rgba(255,107,107,0.06), rgba(77,150,255,0.06));
+      border-radius: var(--radius);
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+      align-items:center;
+      box-shadow: var(--shadow);
+      margin-bottom:26px;
+    }
+    .hero .intro h2{
+      margin:0 0 12px 0;
+      font-size:28px;
+      color: #0b1220;
+    }
+    .hero .intro p{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .badge{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:white;
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:12px;
+    }
+
+    /* Card to the right */
+    .contact-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), var(--glass));
+      border-radius:12px;
+      padding:18px;
+      text-align:center;
+      box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+      border:1px solid rgba(255,255,255,0.6);
+    }
+    .contact-card h3{margin:0 0 6px 0;font-size:18px}
+    .phone{
+      display:inline-block;
+      margin-top:6px;
+      font-size:18px;
+      font-weight:800;
+      color:#0b1220;
+      text-decoration:none;
+      background:linear-gradient(90deg,var(--accent4),var(--accent3));
+      padding:8px 12px;
+      border-radius:10px;
+      color:white;
+    }
+    .slogan{
+      margin-top:12px;
+      font-weight:600;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      border-left:6px solid transparent;
+    }
+    .card.primary{border-left-color:var(--accent1)}
+    .card.secondary{border-left-color:var(--accent4)}
+    .card.tertiary{border-left-color:var(--accent3)}
+
+    .card h4{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Curriculum list */
+    .list{
+      list-style:none;
+      padding:0;
+      margin:12px 0 0 0;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .list li{
+      background: linear-gradient(90deg, rgba(77,150,255,0.06), rgba(107,203,119,0.04));
+      padding:10px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:26px;
+      padding:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns: repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:10px}
+      .brand p{display:none}
+    }
+
+    /* small decorative accent */
+    .colors-row{
+      display:flex;
+      gap:8px;
+      margin-top:10px;
+      align-items:center;
+    }
+    .swatch{
+      width:28px;height:28px;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand" aria-label="شعار روضة ورد الندى">
+        <div class="logo" aria-hidden="true">ورد</div>
+        <div>
+          <h1>روضة ورد الندى النموذجية</h1>
+          <p>بناء شخصية الطفل المسلم المتكاملة دينياً وعلمياً وتربوياً واجتماعياً</p>
+        </div>
+      </div>
+
+      <nav aria-label="روابط الموقع">
+        <a href="#about">عن الروضة</a>
+        <a href="#programs">البرامج</a>
+        <a href="#enroll">التسجيل</a>
+        <a class="cta" href="tel:+962785945190">اتصل الآن • +962 78 594 5190</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="intro">
+          <span class="badge">مرحلة الروضة</span>
+          <h2 id="hero-title">نرعى الجذور.. وننمي الأجنحة</h2>
+          <p>في روضة <strong>ورد الندى النموذجية</strong> نعمل على تنشئة الطفل المسلم المتكامل: دينياً، علمياً، تربوياً واجتماعياً، عبر برامج مبدعة وبيئة محبّة وآمنة.</p>
+
+          <div class="colors-row" aria-hidden="true">
+            <div class="swatch" style="background:linear-gradient(135deg,var(--accent1),var(--accent2))"></div>
+            <div class="swatch" style="background:linear-gradient(135deg,var(--accent3),var(--accent4))"></div>
+            <div class="swatch" style="background:linear-gradient(135deg,var(--accent4),var(--accent1))"></div>
+          </div>
+        </div>
+
+        <aside class="contact-card" aria-labelledby="contact-title">
+          <h3 id="contact-title">تواصل معنا</h3>
+          <a class="phone" href="tel:+962785945190">+962 78 594 5190</a>
+          <p class="slogan">بناء شخصية الطفل المسلم المتكاملة دينياً وعلمياً وتربوياً واجتماعياً</p>
+        </aside>
+      </section>
+
+      <section id="about" class="card primary" style="margin-bottom:18px">
+        <h4>عن الروضة</h4>
+        <p>روضة خاصة تهدف إلى توفير بيئة تربوية متوازنة تُعنى بالقيم الإسلامية، وتنمية المهارات العلمية والاجتماعية لدى الطفل منذ سنواته الأولى.</p>
+      </section>
+
+      <section class="grid" aria-label="البرامج الأساسية">
+        <article class="card secondary">
+          <h4>البرنامج التعليمي</h4>
+          <p>مناهج مبنية على التحفيز الذهني المبكر، أنشطة علمية مبسطة، ووقت قراءة وقصص يوجهها مربون متخصصون.</p>
+        </article>
+
+        <article class="card tertiary">
+          <h4>التهذيب الديني</h4>
+          <p>دروس مبسطة في الأخلاق والعبادات والقصص النبوية بطريقة مناسبة للأطفال لتعزيز الهوية الدينية.</p>
+        </article>
+
+        <article class="card">
+          <h4>النمو الاجتماعي والتربوي</h4>
+          <p>أنشطة جماعية، ورش تواصل، ولعب منظم لبناء المهارات الاجتماعية والسلوكية.</p>
+        </article>
+      </section>
+
+      <section id="programs" class="card" style="margin-bottom:18px">
+        <h4>العناصر الأساسية للمناهج</h4>
+        <ul class="list" aria-live="polite">
+          <li>القرآن الكريم بطريقة مبسطة ومحفزة</li>
+          <li>أساسيات الحساب والمنطق عبر اللعب</li>
+          <li>ورش فنية وحركية لتنمية المهارات الحركية الدقيقة</li>
+          <li>سلوكيات اجتماعية: مشاركة، احترام، تعاون</li>
+        </ul>
+      </section>
+
+      <section id="enroll" class="card">
+        <h4>التسجيل والزيارات</h4>
+        <p>للتسجيل أو حجز زيارة للتعرف على الروضة ومقابلة الفريق، الرجاء الاتصال بالرقم التالي أو إرسال رسالة عبر الهاتف.</p>
+        <p style="margin-top:12px">
+          <a class="phone" href="tel:+962785945190">اتصال سريع: +962 78 594 5190</a>
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> روضة ورد الندى النموذجية — جميع الحقوق محفوظة. • رقم التواصل: <strong>+962 78 594 5190</strong>
+    </footer>
+
+  </div>
+
+  <script>
+    // تاريخ تلقائي في الفوتر
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // تحسين تجربة النقر على روابط الهاتف (تتبّع بسيط)
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(a=>{
+      a.addEventListener('click', ()=> {
+        // حدث بسيط للقياس إن رغبت لاحقاً
+        console.log('Phone link clicked:', a.href);
+      });
+    });
+  </script>
+</body>
+</html>
